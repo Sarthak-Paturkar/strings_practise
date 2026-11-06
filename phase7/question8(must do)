@@ -1,0 +1,53 @@
+'''
+Sentence analyzer: Take a sentence and display:
+Total characters (excluding spaces).
+Total words.
+Number of vowels.
+Number of uppercase letters.
+Number of lowercase letters.
+Longest word.
+Reversed sentence.
+'''
+a = input("Enter a sentence: ")
+
+count = 0
+u_count = 0
+l_count = 0
+vowel = 0
+
+c = a.split()
+max_length = c[0] if c else ""
+
+b = "".join(a.split())
+
+for i in b:
+    count += 1
+
+print("Total characters excluding spaces:", count)
+print("Total words:", len(c))
+
+for i in b.lower():
+    if i in "aeiou":
+        vowel += 1
+
+print("Total number of vowels:", vowel)
+
+for i in a:
+    if i.isupper():
+        u_count += 1
+    elif i.islower():
+        l_count += 1
+
+print("Number of uppercase letters:", u_count)
+print("Number of lowercase letters:", l_count)
+
+for i in c:
+    if len(i) > len(max_length):
+        max_length = i
+
+print("Longest word:", max_length)
+
+d = c[::-1]
+k = " ".join(d)
+
+print("The reversed sentence:", k)
